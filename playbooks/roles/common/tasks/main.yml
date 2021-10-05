@@ -1,0 +1,24 @@
+- name: install all required packages
+  apt:
+    update_cache: yes
+    pkg:
+      - btrfs-progs
+      - curl
+      - iptables
+      - util-linux
+      - coreutils
+      - cgroup-tools
+
+- name: Download Alpine Make Root FS
+  git:
+    repo: https://github.com/alpinelinux/alpine-make-rootfs
+    dest: alpine-make-rootfs
+
+- name: Make Alpine Root FS
+  shell: alpine-make-rootfs/alpine-make-rootfs --packages apk-tools /root-for-container
+
+- name: copy shocker script to VM
+  copy:
+    src: shocker.sh
+    dest: shocker.sh
+    mode: 0777
