@@ -15,7 +15,7 @@
     dest: alpine-make-rootfs
 
 - name: Make Alpine Root FS
-  shell: alpine-make-rootfs/alpine-make-rootfs --packages apk-tools /root-for-container
+  shell: alpine-make-rootfs/alpine-make-rootfs --packages apk-tools /root-for-container -m http://uk.alpinelinux.org/alpine/
 
 - name: copy shocker script to VM
   copy:
