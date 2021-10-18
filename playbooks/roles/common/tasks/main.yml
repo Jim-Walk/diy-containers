@@ -22,3 +22,15 @@
     src: shocker.sh
     dest: shocker.sh
     mode: 0777
+
+- name: copy shocker1 script to VM
+  copy:
+    src: shocker1.sh
+    dest: shocker1.sh
+    mode: 0777
+
+- name: copy shocker2 script to VM
+  copy:
+    src: shocker2.sh
+    dest: shocker2.sh
+    mode: 0777
