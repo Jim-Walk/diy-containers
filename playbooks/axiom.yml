@@ -5,6 +5,6 @@
   become_method: sudo
 
   roles:
-    - role: docker
     - role: common
+    - role: docker
           
